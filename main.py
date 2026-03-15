@@ -113,11 +113,11 @@ def build_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例用法:
-  python main.py backtest AAPL --strategy ma_cross
-  python main.py backtest 600519.SS --strategy rsi --period 3y
-  python main.py backtest TSLA --strategy macd --capital 200000 --trades
-  python main.py portfolio AAPL MSFT GOOGL --capital 300000
-  python main.py info 000858.SZ
+  python main.py backtest 600519 --strategy ma_cross          # 茅台 双均线
+  python main.py backtest 600519 --strategy rsi --period 3y   # 茅台 RSI
+  python main.py backtest 000858 --strategy macd --trades     # 五粮液 MACD
+  python main.py portfolio 600519 000858 --capital 300000     # 投资组合
+  python main.py info 600519                                   # 股票信息
         """,
     )
     sub = parser.add_subparsers(dest="command", required=True)
